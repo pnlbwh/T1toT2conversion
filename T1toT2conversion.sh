@@ -25,7 +25,7 @@ t1Tmp=$(mktemp)-t1.nrrd
 
 log "Make '$t2Out'"
 run unu convert -t float -i "$t1" -o "$t1Tmp"
-cmdMatlab="addpath $SCRIPTDIR; T1toT2conversion('$t1', '$t2Out'); quit"
+cmdMatlab="addpath $SCRIPTDIR; T1toT2conversion('$t1Tmp', '$t2Out'); quit"
 binMatlab="matlab -nosplash -nodesktop"
 $binMatlab -r "$cmdMatlab"
 log "Made '$t2Out'"
